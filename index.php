@@ -7,9 +7,13 @@
 </head>
 <body>
     <?php
+        session_start();
         include 'connexion.php';
         if (!isset($_GET['status'])) {
             include 'login.php';
+        }
+        if (isset($_GET['status']) && $_GET['status'] == 'logged') {
+            echo 'Bienvenue ' . $_SESSION['user_name'] . ' !';
         }
     ?>
 </body>
