@@ -7,7 +7,10 @@
         <input type="email" id="mail" name="mail" required><br>
 
         <label for="password">Mot de passe*</label><br>
+        <div class="input-wrapper">
         <input type="password" id="password" name="password" required><br>
+        <button type="button" id="togglePassword" onclick="togglePasswordVisibility()">Afficher</button>
+        </div>
         <br>
         <div>
             <div>
@@ -18,6 +21,19 @@
         </div>
         <button type="submit">Se connecter</button>
     </form>
+    <script>
+    function togglePasswordVisibility() {
+        var passwordInput = document.getElementById('password');
+        var toggleButton = document.getElementById('togglePassword');
+        if (passwordInput.type === 'password') {
+            passwordInput.type = 'text';
+            toggleButton.textContent = 'Masquer';
+        } else {
+            passwordInput.type = 'password';
+            toggleButton.textContent = 'Afficher';
+        }
+    }
+    </script>
 
     <?php
     if (isset($_GET['erreur'])) {
