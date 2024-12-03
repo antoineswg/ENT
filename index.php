@@ -6,7 +6,11 @@
     <title>ENT</title>
 </head>
 <body>
-    <h1>BIENVENUE SUR L'ENT</h1>
-    <p>test paragraphe</p>
+    <?php
+        include 'connexion.php';
+        if (!isset($_GET['status'])) {
+            include 'login.php';
+        }
+    ?>
 </body>
 </html>
